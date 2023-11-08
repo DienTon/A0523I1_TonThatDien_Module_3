@@ -246,11 +246,47 @@ left join loai_khach lk  on lk.ma_loai_khach = kh.ma_loai_khach
 left join hop_dong hd on kh.ma_khach_hang = hd.ma_khach_hang
 left join dich_vu dv on dv.ma_dich_vu = hd.ma_dich_vu
 left join hop_dong_chi_tiet hdct on hdct.ma_hop_dong = hd.ma_hop_dong
-left join dich_vu_di_kem dvdk on dvdk.ma_dich_vu_di_kem = hdct.ma_dich_vu_di_kem;
+left join dich_vu_di_kem dvdk on dvdk.ma_dich_vu_di_kem = hdct.ma_dich_vu_di_kem
+
+;
 
 -- bai6
 select dv.ma_dich_vu, dv.ten_dich_vu, dv.dien_tich, dv.chi_phi_thue,ldv.ten_loai_dich_vu from dich_vu dv
  join hop_dong hd on hd.ma_dich_vu = dv.ma_dich_vu
  join loai_dich_vu ldv on ldv.ma_loai_dich_vu = dv.ma_loai_dich_vu
-where ngay_lam_hop_dong < '2021-01-01' or ngay_lam_hop_dong > '2021-04-01'
+where hd.ma_dich_vu not in(
+							select ma_dich_vu from hop_dong
+							where (year(ngay_lam_hop_dong) = 2021) and (month(ngay_lam_hop_dong) >= 1 and month(ngay_lam_hop_dong) <= 3)
+							)
 group by dv.ma_dich_vu;
+
+-- bai7
+select dv.ma_dich_vu, dv.ten_dich_vu, dv.dien_tich,dv.so_nguoi_toi_da, dv.chi_phi_thue, ldv.ten_loai_dich_vu
+from dich_vu dv
+join loai_dich_vu ldv on ldv.ma_loai_dich_vu = dv.ma_loai_dich_vu
+join hop_dong hd on hd.ma_dich_vu = dv.ma_dich_vu
+where year(hd.ngay_lam_hop_dong) = 2020 and dv.ma_dich_vu not in(
+											select ma_dich_vu from hop_dong hd
+                                            where year(hd.ngay_lam_hop_dong) = 2021
+										)
+group by dv.ma_dich_vu;
+-- bai8
+
+select distinct ma_khach_hang ,ho_ten from khach_hang;
+select ho_ten from khach_hang group by ho_ten;
+
+-- bai9
+select month(ngay_lam_hop_dong) as `month`, count(ngay_lam_hop_dong) as "Số lượng người đặt"
+  from hop_dong
+  where year(ngay_lam_hop_dong) = 2021
+  group by `month`
+  order by `month` ;
+
+-- bai10
+select hd.ma_hop_dong,hd.ngay_lam_hop_dong, hd.ngay_ket_thuc, hd.tien_dat_coc, coalesce(sum(hdct.so_luong), 0) as so_luong_dich_vu_di_kem
+from hop_dong hd
+left join hop_dong_chi_tiet hdct on hd.ma_hop_dong = hdct.ma_hop_dong
+group by hd.ma_hop_dong,hd.ngay_lam_hop_dong, hd.ngay_ket_thuc, hd.tien_dat_coc;
+
+-- bai11 
+select *, lk.ten_loai_khach, kh.dia_chi from dich_vu
