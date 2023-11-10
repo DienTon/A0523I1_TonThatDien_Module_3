@@ -289,4 +289,24 @@ left join hop_dong_chi_tiet hdct on hd.ma_hop_dong = hdct.ma_hop_dong
 group by hd.ma_hop_dong,hd.ngay_lam_hop_dong, hd.ngay_ket_thuc, hd.tien_dat_coc;
 
 -- bai11 
-select *, lk.ten_loai_khach, kh.dia_chi from dich_vu
+select kh.ma_khach_hang,kh.ho_ten,kh.dia_chi, lk.ten_loai_khach, kh.dia_chi, dvdk.* from khach_hang kh
+join loai_khach lk on kh.ma_loai_khach = lk.ma_loai_khach
+join hop_dong hd on hd.ma_khach_hang = kh.ma_khach_hang
+join hop_dong_chi_tiet hdct on hdct.ma_hop_dong = hd.ma_hop_dong
+join dich_vu_di_kem dvdk on dvdk.ma_dich_vu_di_kem = hdct.ma_dich_vu_di_kem
+where lk.ten_loai_khach = 'Diamond' and (kh.dia_chi like '%Vinh%' or kh.dia_chi like '%Quảng Ngãi%');
+
+-- bai12
+
+-- bai13
+select * from dich_vu_di_kem dvdk;
+-- bai14
+-- bai15
+-- bai16
+-- bai17
+-- bai18
+-- bai19
+-- bai20
+select ma_khach_hang as id,ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi from khach_hang
+union
+select ma_nhan_vien,ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi from nhan_vien;
