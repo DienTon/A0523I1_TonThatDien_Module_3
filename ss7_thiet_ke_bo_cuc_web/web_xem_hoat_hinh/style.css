@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#nav {
+    background-color: antiquewhite;
+}
+li{
+    padding-left: 50px;
+    margin: 10px;
+    list-style: "|";
+    float: left;
+}
