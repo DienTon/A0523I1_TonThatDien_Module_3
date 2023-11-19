@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <nav id="menu" class="col-12">
+        <ul>
+            <li>Logo</li>
+            <li>Home</li>
+            <li>About</li>
+            <li>Projects</li>
+            <li>Contact</li>
+            <li style="float: right;">Login</li>
+        </ul>
+    </nav>
+    <!-- MID -->
+    <div class="row">
+        <!-- Left -->
+        <div id="left" class="col-2">
+            <ul>
+                <li><a href="">link</a></li>
+                <li><a href="">link</a></li>
+                <li><a href="">link</a></li>
+            </ul>
+        </div>
+        <!-- Mid -->
+        <div id="mid" class="col-8">
+            <h1><b>Welcome</b></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                ut aliquip ex ea commodo consequat.</p>
+                <hr>
+            <h2><b>Test</b></h2>
+            <p>lorem ipsum...</p>
+        </div>
+        <div id="right" class="col-2">
+            <ul>
+                <li><p>ADS</p></li>
+                <li><p>ADS</p></li>
+            </ul>
+        </div>
+    </div>
+    <!-- footer -->
+    <div id="footer" class="col-12">
+        <p>Footer text</p>
+    </div>
+</body>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+    #menu{
+        height: 60px;
+        background-color: #555555;
+        
+    }
+    nav ul li:hover{
+        background-color: dimgray;
+        color: black;
+    }
+    ul li a {
+        text-decoration: none;
+        color: rgb(74, 131, 230);
+    }
+    ul li{
+        text-align: center;
+        list-style-type: none;
+    }
+    ul{
+        margin: 0;
+        padding: 0;
+    }
+    #menu li{
+        color: white;
+        padding: 20px;
+        height: 60px;
+        float: left;
+    }
+    #left{
+        float: left;
+        margin: 0;
+        padding: 0;
+        height: 622px;
+        background-color: #F1F1F1;
+    }
+    #left li{
+        margin-top: 20px;
+    }
+
+    #mid{
+        box-sizing: border-box;
+        padding: 20px;
+    }
+
+    #right{
+        box-sizing: border-box;
+        padding: 0;
+        float: right;
+        height: 622px;
+        background-color: #F1F1F1;
+    }
+    #right li{
+        margin-top: 20px;
+        text-align: center;
+        margin: 20px;
+    }
+    #right p{
+        display: block;
+        border: 1px solid;
+        height: 100px;
+        background-color: antiquewhite;
+        padding-top: 32px;
+    }
+    #footer{
+        background-color: #555555;
+        color: white;
+        text-align: center;
+        height: 60px;
+        padding-top: 20px;
+    }
+    
+</style>
+</html>
