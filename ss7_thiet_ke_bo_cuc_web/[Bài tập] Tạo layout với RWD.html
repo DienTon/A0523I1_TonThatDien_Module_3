@@ -9,12 +9,12 @@
 <body>
     <nav id="menu" class="col-12">
         <ul>
-            <li>Logo</li>
-            <li>Home</li>
-            <li>About</li>
-            <li>Projects</li>
-            <li>Contact</li>
-            <li style="float: right;"><img src="https://cdn.icon-icons.com/icons2/2946/PNG/512/login_icon_184318.png" alt="" style="height: 20px; width: 20px;"> Login</li>
+            <a href=""><li>Logo</li></a>
+            <a href=""><li>Home</li></a>
+            <a href=""><li>About</li></a>
+            <a href=""><li>Projects</li></a>
+            <a href=""><li>Contact</li></a>
+            <a href=""><li style="float: right;"><img src="https://cdn-icons-png.flaticon.com/128/9403/9403281.png" alt="" style="height: 20px; width: 20px;">  Login</li></a>
         </ul>
     </nav>
     <!-- MID -->
@@ -55,24 +55,25 @@
 </body>
 
 <style>
-    body{
+    *{
+        box-sizing: border-box;
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        overflow-x: hidden;
     }
     #menu{
         height: 60px;
-        background-color: #555555;
-        
-    }
-    nav ul li:hover{
         background-color: black;
+    }
+    #menu a{
+        color: white;
+    }
+    #menu ul a li:hover{
+        background-color: #555555;
         color: white;
     }
     ul li a {
         text-decoration: none;
-        color: rgb(74, 131, 230);
     }
     ul li{
         text-align: center;
