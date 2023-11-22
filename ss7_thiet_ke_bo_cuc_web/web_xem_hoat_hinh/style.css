@@ -5,11 +5,48 @@
 #nav {
     background-color: antiquewhite;
     text-align: center;
-
+    margin-bottom: 20px;
 }
-a{
+table a{
     text-decoration: none;
     color: black;
     padding-left: 50px;
     margin: 10px;
+    text-align: center;
+}
+#menu{
+    background-color: brown;
+    box-sizing: border-box;
+padding: 10px;
+    
+}
+#menu img{
+    padding: 10px;
+    height: 200px; width: 100%;
+}
+ul{
+    padding-left: 10px;
+}
+li{
+    background-color: black;
+    list-style: none;
+}
+#menu a{
+    text-decoration: none;
+    color: red;
+}
+#mo-ta-video{
+    padding: 80px;
+    color: white;
+    text-align: left;
+}
+#content {
+    background-color: brown;
+    padding-top: 10px;
+    text-align: center;
+}
+footer{
+    text-align: center;
+    bottom: 0;
+    height: 100%;
 }
