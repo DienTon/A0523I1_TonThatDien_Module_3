@@ -1,31 +1,37 @@
 *{
     padding: 0;
     margin: 0;
+    background-color: black;
+    /* overflow-x: hidden; */
 }
+
 #nav {
-    background-color: antiquewhite;
+    background-color: black;
     text-align: center;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+table td{
+    color: white    ;
 }
 table a{
     text-decoration: none;
-    color: black;
+    color: white;
     padding-left: 50px;
     margin: 10px;
     text-align: center;
-}
-#menu{
-    background-color: brown;
-    box-sizing: border-box;
-padding: 10px;
     
 }
+#menu{
+    box-sizing: border-box;
+    padding: 5px;
+}
+
 #menu img{
-    padding: 10px;
+    
     height: 200px; width: 100%;
 }
 ul{
-    padding-left: 10px;
+    padding-left: 5px;
 }
 li{
     background-color: black;
@@ -36,14 +42,20 @@ li{
     color: red;
 }
 #mo-ta-video{
-    padding: 80px;
+    padding-right: 100px;
+    padding-bottom: 90px;
     color: white;
-    text-align: left;
+    text-align: right;
 }
 #content {
-    background-color: brown;
-    padding-top: 10px;
     text-align: center;
+    padding: 10px;
+}
+#content ul{
+    margin-bottom: 100px;
+}
+#content iframe{
+    padding-top: 30px;
 }
 footer{
     text-align: center;
