@@ -42,7 +42,7 @@ CREATE TABLE loai_khach (
 );
 
 CREATE TABLE khach_hang (
-    ma_khach_hang INT PRIMARY KEY auto_increment,
+    ma_khach_hang INT PRIMARY KEY,
     ho_ten VARCHAR(45),
     ngay_sinh DATE,
     gioi_tinh BIT(1),
@@ -151,6 +151,9 @@ insert into Loai_khach(Ten_loai_khach)
 	('Gold'),
 	('Silver'),
 	('Member');
+    insert into Khach_hang(ma_khach_hang,ho_ten,Ngay_sinh,gioi_tinh,So_cmnd,so_dien_thoai,Email,Dia_chi,Ma_loai_khach)
+values
+(111,'Nguyễn Thị Hào','1970-11-07',0,'643431213',0945423362,'thihao07@gmail.com','23 Nguyễn Hoàng, Đà Nẵng',5);
     
 insert into Khach_hang(ho_ten,Ngay_sinh,gioi_tinh,So_cmnd,so_dien_thoai,Email,Dia_chi,Ma_loai_khach)
 values

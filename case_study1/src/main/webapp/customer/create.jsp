@@ -13,14 +13,14 @@
 </head>
 <body>
 <h1 style="text-align: center;">ADD NEW CUSTOMER</h1>
-<p>
-    <a href="/customer-servlet">
-        <button type="button" class="btn btn-primary">Back to list</button>
-    </a>
-    <c:if test='${requestScope["message"] != null}'>
-        <span class="message">${requestScope["message"]}</span>
-    </c:if>
-</p>
+    <p>
+        <a href="/customer-servlet">
+            <button type="button" class="btn btn-primary">Back to list</button>
+        </a>
+        <c:if test='${requestScope["message"] != null}'>
+            <span class="message">${requestScope["message"]}</span>
+        </c:if>
+    </p>
 <form method="post">
     <fieldset>
         <legend>User information</legend>
