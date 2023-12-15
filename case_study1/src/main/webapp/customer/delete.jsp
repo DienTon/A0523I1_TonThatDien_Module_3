@@ -22,6 +22,7 @@
         <legend>Customer information</legend>
         <table>
             <tr>
+
                 <td>ID:</td>
                 <td>${customer.id}</td>
             </tr>
