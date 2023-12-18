@@ -28,6 +28,7 @@ CREATE TABLE nhan_vien (
     ma_vi_tri INT,
     ma_trinh_do INT,
     ma_bo_phan INT,
+    
     FOREIGN KEY (ma_vi_tri)
         REFERENCES vi_tri (ma_vi_tri),
     FOREIGN KEY (ma_trinh_do)
