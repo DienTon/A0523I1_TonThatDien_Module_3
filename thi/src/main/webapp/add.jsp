@@ -23,7 +23,7 @@
             <%--            name--%>
             <div class="mb-3">
                 <label class="form-label">Product Name</label>
-                <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp">
+                <input type="text" class="form-control" id="name" name="name">
             </div>
             <%--            price--%>
             <div class="mb-3">
