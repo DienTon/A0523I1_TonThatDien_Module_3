@@ -31,55 +31,60 @@
         </form>
     </div>
 </nav>
-<table class="table">
-    <tr>
-        <td><b>#</b></td>
-        <td><b>Product Name</b></td>
-        <td><b>Price</b></td>
-        <td><b>Quantity</b></td>
-        <td><b>Color</b></td>
-        <td><b>Category</b></td>
-        <td><b>Action</b></td>
-    </tr>
-    <c:forEach items="${products}" var="p" varStatus="loop">
+<c:if test="${message == null}">
+    <table class="table">
         <tr>
-            <td>
-                    ${loop.count}
-            </td>
-            <td>
-                    ${p.getName()}
-            </td>
-            <td>
-                    ${p.getPrice()}$
-            </td>
-            <td>
-                    ${p.getQuantity()}
-            </td>
-            <td>
-                    ${p.getColor()}
-            </td>
-
-            <c:forEach items="${categories}" var="c">
-                <c:if test="${c.getId() == p.getId_category()}">
-                    <td>
-                            ${c.getName()}
-                    </td>
-                </c:if>
-            </c:forEach>
-
-            <td>
-                    <%--                btn edit--%>
-                <a href="/product_servlet?action=update&id=${p.id}">
-                    <button type="button" class="btn btn-primary">Sửa</button>
-                </a>
-                    <%--                button delete--%>
-                <button type="button" onclick="sendInfo('${p.id}','${p.name}')" class="btn btn-danger"
-                        data-bs-toggle="modal" data-bs-target="#exampleModal">Delete
-                </button>
-            </td>
+            <td><b>#</b></td>
+            <td><b>Product Name</b></td>
+            <td><b>Price</b></td>
+            <td><b>Quantity</b></td>
+            <td><b>Color</b></td>
+            <td><b>Category</b></td>
+            <td><b>Action</b></td>
         </tr>
-    </c:forEach>
-</table>
+        <c:forEach items="${products}" var="p" varStatus="loop">
+            <tr>
+                <td>
+                        ${loop.count}
+                </td>
+                <td>
+                        ${p.getName()}
+                </td>
+                <td>
+                        ${p.getPrice()}$
+                </td>
+                <td>
+                        ${p.getQuantity()}
+                </td>
+                <td>
+                        ${p.getColor()}
+                </td>
+
+                <c:forEach items="${categories}" var="c">
+                    <c:if test="${c.getId() == p.getId_category()}">
+                        <td>
+                                ${c.getName()}
+                        </td>
+                    </c:if>
+                </c:forEach>
+
+                <td>
+                        <%--                btn edit--%>
+                    <a href="/product_servlet?action=update&id=${p.id}">
+                        <button type="button" class="btn btn-primary">Sửa</button>
+                    </a>
+                        <%--                button delete--%>
+                    <button type="button" onclick="sendInfo('${p.id}','${p.name}')" class="btn btn-danger"
+                            data-bs-toggle="modal" data-bs-target="#exampleModal">Delete
+                    </button>
+                </td>
+            </tr>
+        </c:forEach>
+    </table>
+</c:if>
+<c:if test="${message != null}">
+    <h1 style="text-align: center;color: red">${message}!!</h1>
+</c:if>
 </body>
 <!-- Modal delete-->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

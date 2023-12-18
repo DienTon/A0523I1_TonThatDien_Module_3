@@ -101,7 +101,7 @@ public class ProductRepository implements IProductRepository {
                 int quantity = rs.getInt("product_quantity");
                 String color = rs.getString("product_color");
                 int id_category = rs.getInt("id_category");
-                products.add(new Product(id, name, price, quantity, color, id_category));
+                products.add(new Product(id, nameProduct, price, quantity, color, id_category));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
