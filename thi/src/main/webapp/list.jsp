@@ -28,6 +28,7 @@
             <input type="hidden" name="action" id="action" value="search">
             <input class="form-control me-2" type="search" placeholder="Search by name" name="search" id="search"
                    style="float: right;">
+            <button type="submit" class="btn btn-primary">Search</button>
         </form>
     </div>
 </nav>
@@ -70,7 +71,7 @@
             <td>
                     <%--                btn edit--%>
                 <a href="/product_servlet?action=update&id=${p.id}">
-                    <button type="button" class="btn btn-primary">Sửa</button>
+                    <button type="button" class="btn btn-primary">Edit</button>
                 </a>
                     <%--                button delete--%>
                 <button type="button" onclick="sendInfo('${p.id}','${p.name}')" class="btn btn-danger"
